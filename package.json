@@ -1,0 +1,22 @@
+{
+  "name": "project-name",
+  "description": "...",
+  "keywords": [],
+  "author": {
+    "name": "...",
+    "email": "x@y.com"
+  },
+  "version": "...",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/...repo-owner.../...project-name....git"
+  },
+  "bugs": "https://github.com/...repo-owner.../...project-name.../issues",
+  "homepage": "https://...repo-owner....github.io//...project-name...",
+  "type": "module",
+  "exports": {
+    "types": "./types.d.ts",
+    "default": "./index.js"
+  }
+}
