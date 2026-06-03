@@ -1,10 +1,10 @@
 {
-  "name": "project-name",
-  "description": "...",
+  "name": "...project-name...",
+  "description": "...description...",
   "keywords": [],
   "author": {
-    "name": "...",
-    "email": "x@y.com"
+    "name": "...author...",
+    "email": "...email..."
   },
   "version": "...",
   "license": "MIT",

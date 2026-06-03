@@ -22,9 +22,11 @@ The template consists of the files
 Usage of full template:
 
   - LICENSE:
-    - Replace "...year..." / "...author..." / "...email..." appropriately
-    - "...author..." should match with "author.name" in package.json and "...author / contact..." in README.md (see below)
-    - "...email..." should match with "author.email" in package.json and "...email..." in README.md (see below)
+    - Replace "...year..." appropriately
+    - Replace "...author..." appropriately
+      - "...author..." should match with "author.name" in package.json and "...author..." in README.md (see below)
+    - Replace "...email..." appropriately
+      - "...email..." should match with "author.email" in package.json and "...email..." in README.md (see below)
     - ! Any other changes except of verbatim text may make LICENSE invalid
     - If the given MIT license does not fit: Get alternative from https://choosealicense.com/
 
@@ -37,10 +39,11 @@ Usage of full template:
   - package.json
     - Should also be used for "meta information" if no publication for npm is planned
     - "name" entry should match with "...project-name..." in ISSUES.json and in README.md (see below)
+    - "description" should match with "...description..." in README.md (see below)
     - Replace "..." placeholders with content or delete the respective entry
       - Replace "...project-name..." with the value you have set for the "name" entry
       - Replace "...repo-owner..." with the GitHub user / organisation that hosts the repo
-    - "author.name" should match with "...author..." in LICENSE and "...author / contact..." in README.md (see below)
+    - "author.name" should match with "...author..." in LICENSE and "...author..." in README.md (see below)
     - "author.email" should match with "...email..." in LICENSE and "...email..." in README.md (see below)
     - "license" has to be adjusted if "MIT" is not appropriate (see LICENSE)
     - "homepage" is predefined for the GitHub Pages rendering of the actual project since rich documentation often collides with the (sensible) restrictions in GitHub's repo view, so the Pages rendering is ofter the better entrance
@@ -65,19 +68,19 @@ Usage of this file as README.md for actual repo:
 
   - Delete unused sections ("## XY")
 
-  - Replace "..." placeholders, lines starting with them and parts surrounded by them with content or delete them
+  - Replace placeholders surrounded by "..." with content
 
-  - "..." placeholders surrounded by "%%" must not be deleted, but always replaced with content
+  - Replace lines starting with "..." by content or delete them
 
   - Add sections, change order etc. according to your needs
 
 -->
 
-# %%TITLE%%
+# ...project-title...
 
-%%SHORT_DESCRIPTION%% <!--???? Same as for "description" in package.json -->
+...description...
 
-*[...author / contact...](mailto:...email...?subject=...project-name...)*<!--???? Same as for "author" in package.json -->
+*[...author... &lt;...email...&gt;](mailto:...email...?subject=...project-name...)*
 
 
 ## Synopsis
@@ -85,15 +88,14 @@ Usage of this file as README.md for actual repo:
 ... syntax of exposed function(s) / executable(s) and / or short explanation
 
 
-## Options
+## Parameters
 
 ... parameters of exposed function(s) / executable(s)
 
 
-## Exit status /  Return values
+## Returns
 
 ... codes / states / data returned by exposed function(s) / executable(s)
-<!--???? for normal program termination, compare "Errors" -->
 
 
 ## Examples
@@ -114,23 +116,12 @@ Usage of this file as README.md for actual repo:
       * NB RegEx: `.replace( /\d/g, '' ).replaceAll( '.', '' )` instead of `location.hostname.replace( /[\d\.]/g, '' )` to avoid `[]` which may mislead Markdown parsers to read it as link syntax
   * Unfortunately GitHub repo view displays "<script>" tags and their contents as literal content (for security), so the JavaScript here has to be pressed into an "onclick"
 -->
-See <a aria-description="Release vs. Dev switch = GitHub Pages vs. local file" href="https://hh-lohmann.github.io/...package.../demo.html" onclick="if( location.hostname.replace( /\d/g, '' ).replaceAll( '.', '' ) === '' || location.hostname === 'localhost' ){ this.href='./demo.html'; alert( 'Dev environment detected - switching to local version' ); }">demo.html</a>
-
-
-## Errors
-
-... thrown errors of exposed function(s) / executable(s)
-<!--???? for abnormal program termination, compare "Exit status / Return values" -->
+See <a aria-description="Release vs. Dev switch = GitHub Pages vs. local file" href="https://...repo-owner....github.io/...project-name.../demo.html" onclick="if( location.hostname.replace( /\d/g, '' ).replaceAll( '.', '' ) === '' || location.hostname === 'localhost' ){ this.href='./demo.html'; alert( 'Dev environment detected - switching to local version' ); }">demo.html</a>
 
 
 ## Caveats
 
 ... things that may not work / not work as expected
-
-
-## Details
-
-... for deeper understanding what the exposed function(s) / executable(s) and / or short explanation does / do
 
 
 ## Installation
@@ -154,10 +145,16 @@ Pick for your preferred package manager:
 ```
 
 
-## See also
+## Details
 
-<!--???? Source to refer to in text by GFM Markdown internal links (cf. https://github.github.com/gfm/) -->
+... for deeper understanding what the exposed function(s) / executable(s) and / or short explanation does / do
+
+
+## References
+
+<!--???? Sources to refer to in text by GFM Markdown internal links (cf. https://github.github.com/gfm/) -->
 
 ### ...authors...: ...title...
-  * ...https://the-authors-page.xyz/title...
+  * ...info-about-source...
+  * ...https://url-for-source...
 
