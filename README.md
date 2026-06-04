@@ -64,7 +64,7 @@ Usage of this file as README.md for actual repo:
 
       > The suggested structure here follows the well established man page schema, see e.g. https://man7.org/linux/man-pages/man7/man-pages.7.html
 
-      > HTML comments starting with "<!--????" (like this one) are tips / infos and may be deleted.
+      > HTML comments starting with "<!--????" (like this one) are tips / infos and may be deleted (other comments may be literal parts of the template)
 
   - Delete unused sections ("## XY")
 
@@ -83,9 +83,26 @@ Usage of this file as README.md for actual repo:
 *[...author... &lt;...email...&gt;](mailto:...email...?subject=...project-name...)*
 
 
+## Caution
+
+**... special warning if exposed function(s) / executable(s) may allow / imply risky things like changing or using sensitive settings like credentials**
+
+
 ## Synopsis
 
+<!--???? ! library vs. cli -->
+
 ... syntax of exposed function(s) / executable(s) and / or short explanation
+
+<!--???? library, else delete -->
+```js
+  import { ... } from '...project-name...'
+```
+
+<!--???? cli, else delete -->
+```shell
+  ...project-bin... ...parameters...
+```
 
 
 ## Parameters
@@ -126,22 +143,32 @@ See <a aria-description="Release vs. Dev switch = GitHub Pages vs. local file" h
 
 ## Installation
 
+> *Note that only `i some_package` acts like an alias for `add some_package` (while "i" alone without a "some_package" parameter would (re)install the dependencies defined in your package.json) and that Yarn stopped to follow this convention (see below)*
+
+<!--???? cli, else delete -->
+CLIs should be installed systemwide ("global"). Strip off the `-g` parameter to explicitly restrict to a project bounded usage.
+
 Pick for your preferred package manager:
 
+<!--???? add " -g" for cli -->
 ```shell
   npm i ...repo-owner.../...project-name...
 ```
 
+<!--???? add " -g" for cli -->
 ```shell
   pnpm i ...repo-owner.../...project-name...
 ```
 
+<!--???? add " -g" for cli -->
 ```shell
-  yarn add ...repo-owner.../...project-name...
+  bun i ...repo-owner.../...project-name...
 ```
 
 ```shell
-  bun i ...repo-owner.../...project-name...
+  # With Yarn you should double check docs for your and / or
+  # current Yarn version, newer versions exclude global installations
+  yarn add ...repo-owner.../...project-name...
 ```
 
 
