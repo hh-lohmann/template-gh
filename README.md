@@ -68,6 +68,8 @@ Usage of this file as README.md for actual repo:
 
   - Delete unused sections ("## XY")
 
+  - Replace "[...scope/path...]" placeholders with potential npm "@" scope (e.g. "@your-name/") or GitHub repo owner path (e.g. "your-name/") or delete them
+
   - Replace placeholders surrounded by "..." with content
 
   - Replace lines starting with "..." by content or delete them
@@ -81,6 +83,15 @@ Usage of this file as README.md for actual repo:
 ...description...
 
 *[...author... &lt;...email...&gt;](mailto:...email...?subject=...project-name...)*
+
+<!--????
+  Switch to Pages version for better UI
+  - Styles are respected in Pages view, but ignored in repo, so this is only visible in repo view
+  - Delete if irrelevant
+-->
+<p align="center" aria-description="Hint on GitHub repo view to switch to GitHub Pages view" style="display:none;">
+  <b><i>This page may be displayed less optimal in repo view - you may switch to <a href="https://...repo-owner....github.io/...project-name.../">the GitHub Pages view</a> instead</i></b>
+</p>
 
 
 ## Caution
@@ -129,7 +140,7 @@ Usage of this file as README.md for actual repo:
     * NB: GitHub Pages allows to maintain a single instance of the HTML demo file in the repo
   * In dev a GitHub Pages view would require a Pages build for any change to check instead of live reloading, so JavaScript is utilized here to detect a dev environment and reroute the link to the local repo instance
     * NB: JavaScript is stripped off in GitHub repo view
-    * "dev environment" is defined by using "localhost" or a numerical ID as hostname 
+    * "dev environment" is defined by using "localhost" or a numerical ID as hostname
       * NB RegEx: `.replace( /\d/g, '' ).replaceAll( '.', '' )` instead of `location.hostname.replace( /[\d\.]/g, '' )` to avoid `[]` which may mislead Markdown parsers to read it as link syntax
   * Unfortunately GitHub repo view displays "<script>" tags and their contents as literal content (for security), so the JavaScript here has to be pressed into an "onclick"
 -->
@@ -143,8 +154,6 @@ See <a aria-description="Release vs. Dev switch = GitHub Pages vs. local file" h
 
 ## Installation
 
-> *Note that only `i some_package` acts like an alias for `add some_package` (while "i" alone without a "some_package" parameter would (re)install the dependencies defined in your package.json) and that Yarn stopped to follow this convention (see below)*
-
 <!--???? cli, else delete -->
 CLIs should be installed systemwide ("global"). Strip off the `-g` parameter to explicitly restrict to a project bounded usage.
 
@@ -152,23 +161,24 @@ Pick for your preferred package manager:
 
 <!--???? add " -g" for cli -->
 ```shell
-  npm i ...repo-owner.../...project-name...
+  npm i [...scope/path...]...project-name...
 ```
 
 <!--???? add " -g" for cli -->
 ```shell
-  pnpm i ...repo-owner.../...project-name...
+  pnpm i [...scope/path...]...project-name...
 ```
 
 <!--???? add " -g" for cli -->
 ```shell
-  bun i ...repo-owner.../...project-name...
+  bun i [...scope/path...]...project-name...
 ```
 
 ```shell
-  # With Yarn you should double check docs for your and / or
-  # current Yarn version, newer versions exclude global installations
-  yarn add ...repo-owner.../...project-name...
+  # For Yarn you should double check docs for your and / or
+  # current Yarn version, newer versions do not treat `i package_name`
+  # as an alias for `add ...` and exclude global installations
+  yarn add [...scope/path...]...project-name...
 ```
 
 
